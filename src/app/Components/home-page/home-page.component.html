@@ -1,0 +1,42 @@
+
+<p> Hi {{ user.firstName }}</p>
+<div class="container">
+<div class="home-meetings"> 
+    <table class="home-table">
+        <tr>
+            <td class="home-images"><img src="../../../assets/Images/New-Meeting.png">
+                <figcaption>New Meeting<img src="../../../assets/Images/Dropdown icon.png"></figcaption>
+            </td>
+            <td class="home-images"><img src="../../../assets/Images/New-Meeting.png">
+                <figcaption>Join<img src="../../../assets/Images/Dropdown icon.png"></figcaption>
+            </td>
+        </tr>
+        <tr>
+            <td class="home-images"><img src="../../../assets/Images/New-Meeting.png">
+                <figcaption>Schedule<img src="../../../assets/Images/Dropdown icon.png"></figcaption>
+            </td>
+            <td class="home-images">
+                <img src="../../../assets/Images/New-Meeting.png">
+                <figcaption>Share screen<img src="../../../assets/Images/Dropdown icon.png"></figcaption>
+            </td>
+        </tr>
+    </table>
+</div>
+<div class="home-upcoming-meetings">
+    <img class="home-right-panel home-images home-upcoming-meeting-image" src="../../../assets/Images/home-upcomingMeeting.jpg">
+    <div class="user">Sonam Zoom Meeting
+        <select>
+            <option>...</option>
+            <option value="invitation">Copy Invitation</option>
+            <option value="edit">Edit</option>
+            <option value="delete">Delete</option>
+        </select>
+        <button>Start</button>
+    </div>
+    <div *ngFor = "let data of homePageData">{{data}}</div>
+
+    <div><a>View today's upcoming meeting (count of number of meetings)</a>
+    Link this to meetings page
+    </div>
+</div>
+</div>

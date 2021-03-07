@@ -1,0 +1,30 @@
+<div class=" card login-container">
+<h4 class="card-header">LOGIN</h4>
+<form [formGroup]="loginForm" (ngSubmit)="loginForm.valid?onLoginSubmit(loginForm):null" novalidate #logonForm="ngForm">
+<div class="card-body">
+    <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" formControlName = "email" #email autocomplete="email" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" required>
+        <div *ngFor="let validation of validation_messages.email">
+            <div *ngIf="loginForm.get('email').hasError(validation.type) && (loginForm.get('email').touched || logonForm.submitted)"> {{validation.message}}</div>
+        </div>
+    </div>
+    <div class="form-group">
+    <label for="password">Password</label>
+    <input type="password" #password formControlName = "password" autocomplete="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }"  required>
+</div>
+<div class="form-group">
+        <button [disabled]="loading" class="btn btn-primary" type="submit">
+                <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+                Login
+        </button>
+    <input type="checkbox" id="checkbox" value="signin-checkbox">
+    <label for="checkbox">Keep me signed in</label>
+    <!-- <a [routerLink] = "['./header']"><button type="submit">Sign In</button></a> -->
+    
+</div>
+</div>
+</form>
+<a routerLink="../register" class="btn btn-link">Sign Up Free</a>
+<router-outlet></router-outlet>
+</div>

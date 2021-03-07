@@ -1,0 +1,74 @@
+<table class="chat-table">
+    <td class="chat-left-col">
+        <div>
+        <div>
+            <input type=text class="chat-input-field" placeholder="Jump to..">
+        </div>
+            
+            <ul class="chat-ul-field" *ngFor="let item of starredItems;let i = index" (click)="onChatClick(i)"> 
+              <li > {{ item.title }} </li>
+                <!-- <li><img src="../../../assets/Images/favicon-16x16.png" style="padding-right: 20px;">Starred Messages</li>
+                <li><img src="../../../assets/Images/Contacts_favicon.png" style="padding-right: 20px;">Contact Requests</li>
+                <li><img src="../../../assets/Images/file.png" style="padding-right: 20px;">All Files</li>
+                <li><img src="../../../assets/Images/cherryBlossom.png" style="padding-right: 20px;">Sonam Dhadiwal</li> -->
+            </ul>
+            
+        <div>
+                <ul class="chat-ul-field"> RECENT
+                        <input type="image" src="../../../assets/Images/Dropdown icon.png">
+                        <input type="image" class="recent-new-channels" src="../../../assets/Images/sparkle.png">
+                        <li>JSON DATA</li>
+                </ul>
+            
+            </div>
+            <div>
+                    <ul class="chat-ul-field"> APPS
+                            <input type="image" class="recent-new-channels" src="../../../assets/Images/sparkle.png">
+                            <li>JSON DATA</li>
+                    </ul>
+                
+                </div>
+        
+        </div>
+    </td>
+    <td class="chat-right-col">
+        <div *ngIf = "starredListNumber===1">
+            Give important messages a * 
+            This will help you remember to follow up later
+        </div>
+        <div *ngIf = "starredListNumber===2">
+            Notifications about your contact requests will show up here
+        </div>
+        <div *ngIf = "starredListNumber===3">
+            <div>
+                <label class="switch">
+                    <input type="checkbox" checked>
+                    <span class="slider round">
+                    </span>
+                  </label> 
+            </div>
+
+        </div>
+        <div *ngIf = "starredListNumber===4">
+            <div> 
+                {{ currentUser }}
+            </div>
+            <div>
+                This is your personal space.
+                Collect ideas,draft messages, or save files and links.
+            </div>
+            <div>
+                <ul class="horizontal-ul">
+                    <li class="horizontal-li">
+                        Screenshot
+                    </li>
+                    <li class="horizontal-li">
+                            File
+                    </li>
+                </ul>
+                <input type="text" placeholder="What's on your mind">
+            </div>
+
+        </div>
+    </td>
+</table>

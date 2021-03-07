@@ -1,0 +1,26 @@
+<table class="meeting-table">
+    <td class="meeting-left-col">
+            <tr>
+        <div>
+           <label class="switch">
+                <input type="checkbox" checked>
+                <span class="slider round">
+                </span>
+              </label> 
+              <input type="image" class="recent-new-channels" src="../../../assets/Images/sparkle.png">
+        </div>
+        </tr>
+        <tr>
+                My Contacts
+        </tr>
+        <tr>
+                <h2 class="accordion-head" (click)="onClick($event)">My Contacts!!</h2>
+                <div class="accordion-body" [class.active]="active">
+                    <ng-content></ng-content>
+                </div> 
+        </tr>
+    </td>
+    <td class="meeting-right-col">
+            <app-signup-confirmation-page></app-signup-confirmation-page>
+    </td>
+</table>

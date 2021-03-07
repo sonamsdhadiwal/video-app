@@ -1,0 +1,43 @@
+<table class="meeting-table">
+    <td class="meeting-left-col">
+            <tr>
+        <div>
+           <img src="../../../assets/Images/Refresh.jpg">
+           <label class="switch">
+                <input type="checkbox" checked>
+                <span class="slider round">
+                </span>
+              </label> 
+              <input type="image" class="recent-new-channels" src="../../../assets/Images/sparkle.png">
+        </div>
+        </tr>
+        <tr>
+                Meeting Id generated at enrollment.
+                My Personal Meeting ID (PMI)
+        </tr>
+    </td>
+    <td class="meeting-right-col">
+            <tr>
+                    My Personal Meeting ID(PMI)
+            </tr>
+            <tr>
+                    Meeting Id generated at enrollment
+            </tr>
+            <tr>
+                    <button>Start</button>
+                    <button>Copy Invitation</button>
+                    <button>Edit</button>
+            </tr>
+            <tr *ngIf="meetingFlag===false else hideMeeting">
+               <div (click)="checkMeetingInvite()"> Show Meeting Invitation</div>
+            </tr>
+            <ng-template #hideMeeting>
+                    <tr (click) = "checkMeetingInvite()">Hide Meeting Invitation</tr>
+                    <tr> Sonam Dhadiwal is inviting you to schedule a meeting</tr>
+                    <tr> Sonam Dhadiwal's personal meeting room </tr>
+                    <tr> Join Meeting</tr>
+                    <tr>https://......us/j/meetingId</tr>
+                    <tr>Meeting Id: 999 999 9999</tr>
+            </ng-template>
+    </td>
+</table>

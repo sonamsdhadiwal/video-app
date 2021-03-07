@@ -1,0 +1,20 @@
+<h4> For verification, please confirm your date of birth</h4>
+<div>
+    <!-- Dropdown box that can be used everywhere -->
+      <select [(ngModel)]="selectedValue">
+        <option *ngFor="let birthMonth of months" [ngValue]="birthMonth">{{birthMonth.month}}</option>
+      </select>
+      <select>
+        <option *ngFor="let day of days" [ngValue]="day">{{day}}</option>
+      </select>
+      <select>
+        <option *ngFor="let year of years" [ngValue]="year">{{year}}</option>
+      </select>
+      <button type="button" (click)= "signup()">Continue</button>
+</div>
+<div>
+    This data will not be stored
+    /*Just to check whether you are eligible to register or not*/
+</div>
+
+<app-signup-page *ngIf="continueCounter === 1"></app-signup-page>
